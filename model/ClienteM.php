@@ -398,12 +398,12 @@ $cn->closeCn();
         return $capsule;
     }
     
-    public static function loginM(Manager $t)
+    public static function loginM(Cliente $t)
     {
         $capsule = new Capsule();
         $count = 0;
         $query  = 'SELECT COUNT(IDMANAGER) AS TOTAL FROM ';
-        $query .= ' HAPPYLAND.MANAGER ';
+        $query .= ' CLIENTE ';
         $query .= ' WHERE ';
         $query .= " LOGIN = '" . $t->getLogin() . "'";
         $query .= " AND PASS = '";
@@ -416,12 +416,12 @@ $cn->closeCn();
             if ($array[0]['total'] == 0) {
                 $capsule->setMessage('Usuario o Clave Incorrecta');
                 $capsule->setCounter(0);
-                $capsule->setContent(new Manager());
+                $capsule->setContent(new Cliente());
                 $capsule->setError(true);
             } else {
                 $count = $array[0]['total'];
                 $query  = 'SELECT * FROM ';
-                $query .= ' HAPPYLAND.MANAGER ';
+                $query .= ' CLIENTE';
                 $query .= ' WHERE ';
                 $query .= " LOGIN = '" . $t->getLogin() . "'";
                 $query .= " AND PASS = '";
@@ -430,12 +430,19 @@ $cn->closeCn();
                 $stmt->execute();
                 $array = $stmt->fetchAll();
                 for ($i = 0; $i < count($array); $i++) {
-                    $t = new Manager($array[$i]['idmanager']);
-                    $t->setPaternal($array[$i]['paternal']);
-                    $t->setMaternal($array[$i]['maternal']);
-                    $t->setNames($array[$i]['names']);
-                    $t->setLogin($array[$i]['login']);
-                    $t->setPass('');
+                    $t = new Cliente($array[$i]['cod_cliente']);
+                    $t->setNombres($array[$i]['nombres']);
+                    $t->setApellidos($array[$i]['apellidos']);
+                    $t->setF_nacimiento($array[$i]['f_nacimiento']);
+                    $t->setDni($array[$i]['dni']);
+                    $t->setTelefono($array[$i]['telefono']);
+                    $t->setCorreo($array[$i]['correo']);
+                    $t->setDistrito($array[$i]['distrito']);
+                    $t->setDireccion($array[$i]['direccion']);
+                    $t->setPromocion($array[$i]['promocion']);
+                    $t->setUsuario($array[$i]['usuario']);
+                    $t->setClave($array[$i]['clave']);
+                
                 }
                 $capsule->setContent($t);
                 $capsule->setCounter($count);
