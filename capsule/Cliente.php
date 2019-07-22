@@ -26,7 +26,7 @@ class Cliente implements JsonSerializable
         $usuario->setApellidos(@$std->apellidos);
         $usuario->setF_nacimiento(@$std->f_nacimiento);
         $usuario->setDni(@$std->dni);
-        $usuario->setTelefono(@$std->numero);
+        $usuario->setTelefono(@$std->telefono);
         $usuario->setCorreo(@$std->correo);
         $usuario->setDistrito(@$std->distrito);
         $usuario->setDireccion(@$std->direccion);
@@ -45,7 +45,7 @@ class Cliente implements JsonSerializable
             'apellidos' => $this->apellidos,
             'f_nacimiento' => $this->f_nacimiento,
             'dni' => $this->dni,
-            'telefono' => $this->numero,
+            'telefono' => $this->telefono,
             'correo' => $this->correo,
             'distrito' => $this->distrito,
             'direccion' => $this->direccion,
@@ -107,12 +107,12 @@ class Cliente implements JsonSerializable
 
     public function getTelefono()
     {
-        return $this->numero;
+        return $this->telefono;
     }
 
-    public function setTelefono($numero)
+    public function setTelefono($telefono)
     {
-        $this->numero = $numero;
+        $this->telefono = $telefono;
     }
 
     public function getCorreo()
