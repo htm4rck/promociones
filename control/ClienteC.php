@@ -10,7 +10,7 @@ class ClienteC
     {
         $this->data = file_get_contents('php://input');
         $this->data = json_decode($this->data);
-        $this->cliente = Cliente::getCliente($this->data);
+        $this->Cliente = Cliente::getCliente($this->data);
         $this->parameters = array();
         $this->action = $_GET['action'];
         $this->main();
