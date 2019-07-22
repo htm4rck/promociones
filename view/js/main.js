@@ -29,8 +29,10 @@ function reportFront() {
 }
 class Settings {
 	constructor() {
-		this.api = 'http://timetables-app.herokuapp.com/back/api/';
-		//this.api = 'http://localhost/back/api/';
+		//this.api='';
+		//this.api = 'http://timetables-app.herokuapp.com/back/api/';
+		this.api = 'http://localhost/promociones/api/';
+		
 	}
 }
 class Send {
@@ -56,6 +58,22 @@ class Employee {
 		this.dni = '';
 		this.mobile = '';
 	}
+
+	class Cliente {
+		constructor() {
+			this.cod_cliente = 0;
+			this.nombres = '';
+			this.apellidos = '';
+			this.f_nacimiento = '';
+			this.dni = '';
+			this.telefono = '';
+			this.correo = '';
+			this.distrito = '';
+			this.direccion = '';
+			this.promocion = '';
+			this.usuario = '';
+			this.clave = '';
+		}
 }
 class Manager {
 	constructor() {
