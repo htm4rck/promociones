@@ -15,8 +15,8 @@ require_once "config/Routes.php";
 require_once "config/Conexion.php";
 require_once "capsule/Capsule.php";
 
-require_once "capsule/Registro.php";
-require_once "model/RegistroM.php";
+require_once "capsule/Cliente.php";
+require_once "model/ClienteM.php";
 
 /*require_once "capsule/Manager.php";
 require_once "capsule/TimetableEmployee.php";
