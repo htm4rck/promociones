@@ -2,7 +2,8 @@ class CRUDCliente {
 
     constructor() {
         this.settingsGlobal = new Settings();
-        this.api = this.settingsGlobal.api + 'Cliente';
+        //cliente con minuscula porque e sparte de la ruta 
+        this.api = this.settingsGlobal.api + 'cliente';
         this.send = new Send();
         this.parameters = '';
         this.json = '';
@@ -11,19 +12,20 @@ class CRUDCliente {
         this.modalCargandoObject = new Modal(this.modalCargando, {
             backdrop: false
         });
+        //llamo al documento, luego seleccioando un elemento con query(llamar por clase o por llamar por id en este caso id)
         this.txtLogin = document.querySelector('#txtLogin');
         this.txtPass = document.querySelector('#txtPass');
         this.btnLogin = document.querySelector('#btnLogin');
         this.list = [];
-        this.Cliente = new Cliente();
+        this.cliente = new Cliente();
         this.eventsDefault();
     }
     setCliente(id) {
         let clase = this;
-        this.Cliente = new Cliente();
+        this.cliente = new Cliente();
         this.list.forEach(function (element, index) {
-            if (element.idCliente == id) {
-                clase.Cliente = element;
+            if (element.cod_cliente == id) {
+                clase.cliente = element;
                 return;
             }
         })
@@ -43,9 +45,9 @@ class CRUDCliente {
     login() {
         if (this.txtLogin.value != '') {
             if (this.txtPass.value != '') {
-                this.Cliente.login = this.txtLogin.value;
-                this.Cliente.pass = this.txtPass.value;
-                this.json = this.Cliente;
+                this.cliente.login = this.txtLogin.value;
+                this.cliente.pass = this.txtPass.value;
+                this.json = this.cliente;
                 this.send.action = 'login';
                 this.modalCargandoObject.show();
             } else {
