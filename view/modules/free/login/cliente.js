@@ -45,8 +45,8 @@ class CRUDCliente {
     login() {
         if (this.txtLogin.value != '') {
             if (this.txtPass.value != '') {
-                this.cliente.login = this.txtLogin.value;
-                this.cliente.pass = this.txtPass.value;
+                this.cliente.usuario = this.txtLogin.value;
+                this.cliente.clave = this.txtPass.value;
                 this.json = this.cliente;
                 this.send.action = 'login';
                 this.modalCargandoObject.show();
@@ -75,12 +75,11 @@ class CRUDCliente {
             console.log(jsonResponse);
             if (jsonResponse.error == false) {
                 sessionStorage.validate=!jsonResponse.error;
-                sessionStorage.idCliente=jsonResponse.content.idCliente;
-                sessionStorage.paternal=jsonResponse.content.paternal;
-                sessionStorage.maternal=jsonResponse.content.maternal;
-                sessionStorage.names=jsonResponse.content.names;
-                sessionStorage.login=jsonResponse.content.login;
-                window.location='index';
+                sessionStorage.cod_cliente=jsonResponse.content.cod_Cliente;
+                sessionStorage.apellidos=jsonResponse.content.apellidos;
+                sessionStorage.nombres=jsonResponse.content.nombres;
+                sessionStorage.usuario=jsonResponse.content.usuario;
+                window.location='cupones';
             } else {
                 sessionStorage.clear();
                 new ModalAlert(jsonResponse.message, 'error');
