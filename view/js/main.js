@@ -58,8 +58,9 @@ class Employee {
 		this.dni = '';
 		this.mobile = '';
 	}
+}
 
-	class Cliente {
+class Cliente {
 		constructor() {
 			this.cod_cliente = 0;
 			this.nombres = '';
