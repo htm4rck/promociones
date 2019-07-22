@@ -60,6 +60,7 @@ class CRUDCliente {
     }
 
     run() {
+        console.log(this.json)
         this.actionurl = '?action=' + this.send.action;
         let clase = this;
         fetch(this.api + this.actionurl + this.parameters, {

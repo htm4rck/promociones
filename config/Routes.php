@@ -16,6 +16,9 @@ class Routes
     $resource = new BeanResource('', 'free/login/login.html');
     $resource->viewFree();
     array_push($this->list_pages, $resource);
+    $resource = new BeanResource('cupones', 'free/cupones/cupones.html');
+    $resource->viewFree();
+    array_push($this->list_pages, $resource);
 
     //TODO: API
     $resource = new BeanResource('api/cliente', 'ClienteC.php');
