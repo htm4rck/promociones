@@ -20,20 +20,20 @@ class Cliente implements JsonSerializable
     }
     public static function getCliente($std)
     {
-        $usuario = new Usuario();
-        $usuario->setcod_cliente(@$std->cod_cliente);
-        $usuario->setNombres(@$std->nombres);
-        $usuario->setApellidos(@$std->apellidos);
-        $usuario->setF_nacimiento(@$std->f_nacimiento);
-        $usuario->setDni(@$std->dni);
-        $usuario->setTelefono(@$std->telefono);
-        $usuario->setCorreo(@$std->correo);
-        $usuario->setDistrito(@$std->distrito);
-        $usuario->setDireccion(@$std->direccion);
-        $usuario->setPromocion(@$std->promocion);
-        $usuario->setUsuario(@$std->usuario);
-        $usuario->setClave(@$std->clave);
-        return $usuario;
+        $cliente = new Cliente();
+        $cliente->setcod_cliente(@$std->cod_cliente);
+        $cliente->setNombres(@$std->nombres);
+        $cliente->setApellidos(@$std->apellidos);
+        $cliente->setF_nacimiento(@$std->f_nacimiento);
+        $cliente->setDni(@$std->dni);
+        $cliente->setTelefono(@$std->telefono);
+        $cliente->setCorreo(@$std->correo);
+        $cliente->setDistrito(@$std->distrito);
+        $cliente->setDireccion(@$std->direccion);
+        $cliente->setPromocion(@$std->promocion);
+        $cliente->setcliente(@$std->cliente);
+        $cliente->setClave(@$std->clave);
+        return $cliente;
     }
 
     public function jsonSerialize()
