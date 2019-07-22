@@ -5,41 +5,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>.::TimeTables::Login::.</title>
-  <link rel="stylesheet" href="/back/view/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/back/view/css/all.css">
-  <link rel="stylesheet" href="/back/view/css/icons.css">
-  <link rel="stylesheet" href="/back/view/css/landing.page.css">
+  <title>.::Bowling::Promociones::.</title>
+  <link rel="shortcut icon" href="/promociones/view/images/favicon.ico">
+  <link rel="stylesheet" href="/promociones/view/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/promociones/view/css/all.css">
+  <link rel="stylesheet" href="/promociones/view/css/icons.css">
+  <link rel="stylesheet" href="/promociones/view/css/landing.page.css">
 </head>
 
 <body>
+
+
+  
   <header class="masthead text-primary text-center">
     <div class="overlay"></div>
-    <div class="container">
+    <div class="container ">
       <div class="row">
-        <div class="col-xl-9 mx-auto">
-          <h1 class="mb-5"><i class="fas fa-user-circle"></i></h1>
-        </div>
-        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
-            <div class="row">
-              <div class="col-9 mx-auto">
-                <input id="txtLogin" type="text" class="form-control form-control-sm text-center" placeholder="Ingresa Tu Usuario" required>
-              </div>
-            </div>
-            <div class="row mt-1">
-              <div class="col-9 mx-auto">
-                <input id="txtPass" type="password" class="form-control form-control-sm text-center" placeholder="Ingresa Tu Clave" required>
-              </div>
-            </div>
-            <div class="row mt-1">
-              <div class="col-5 mx-auto">
-                <button id="btnLogin" type="submit" class="btn btn-block btn-lg btn-primary btn-sm">Ingresar!</button>
-              </div>
-            </div>
-          </form>
+      <div class="col-2"></div>
+      <div class="col-lg-2 col-md-12">
+        <div class=" mx-auto">
+          <img src="/promociones/view/images/logo.png" class="rounded mx-auto d-block" alt="...">
         </div>
       </div>
+      <form class="col-lg-8 col-md-12 col-sm-12">
+        <div class="row">
+          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+            
+            <br>
+            <br>
+            <br>
+            <div class="row">
+              <div class="col-2 text-white"><h5>Usuario:</h5></div>
+              <div class="col-8 mx-auto">
+                <input id="txtLogin" type="text" class="form-control form-control-sm text-center"
+                  placeholder="Ingresa Tu Usuario" required>
+              </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-2 text-white"><h5>Clave:</h5></div>
+
+              <div class="col-8 mx-auto">
+                <input id="txtPass" type="password" class="form-control form-control-sm text-center"
+                  placeholder="Ingresa Tu Clave" required>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-5 mx-auto">
+                <button id="btnLogin" type="submit" class="btn btn-block btn-lg btn-warning btn-sm text-white">
+                  <b>Iniciar Sesión!</b></button>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-6 mx-auto">
+                <a id="btnLogin" type="submit" class="btn btn-info">Registrarse</a>
+              </div>
+              <div class="col-6 mx-auto">
+                <a id="btnLogin" type="submit" class="">Recuperar Contraseña</a>
+              </div>
+            </div>
+      </form>
+      </div>
+    </div>
+    </div>
     </div>
   </header>
   <footer class="footer bg-light">
@@ -98,12 +125,12 @@
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="/back/view/js/bootstrap-native-v4.js"></script>
-  <script type="text/javascript" src="/back/view/js/main.js"></script>
-  <script type="text/javascript" src="/back/view/js/Alert.js"></script>
-  <script type="text/javascript" src="/back/view/modules/free/login/manager.js"></script>
+  <script type="text/javascript" src="/promociones/view/js/bootstrap-native-v4.js"></script>
+  <script type="text/javascript" src="/promociones/view/js/main.js"></script>
+  <script type="text/javascript" src="/promociones/view/js/Alert.js"></script>
+  <script type="text/javascript" src="/promociones/view/modules/free/login/manager.js"></script>
   <script type="text/javascript">
-sessionStorage.validate=='true'?window.location='index':null;  
+    sessionStorage.validate == 'true' ? window.location = 'index' : null;
   </script>
 </body>
 

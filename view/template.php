@@ -9,10 +9,10 @@
     <meta name="author" content="">
     <title>TimeTables</title>
     <!-- Bootstrap core CSS-->
-    <link rel="stylesheet" href="/app/view/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/app/view/css/main.css">
-    <link rel="stylesheet" href="/app/view/css/icons.css">
-    <link rel="stylesheet" href="/app/view/css/all.css">
+    <link rel="stylesheet" href="/promociones/view/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/promociones/view/css/main.css">
+    <link rel="stylesheet" href="/promociones/view/css/icons.css">
+    <link rel="stylesheet" href="/promociones/view/css/all.css">
     <!-- Custom styles for this template-->
     <style>
 
@@ -95,11 +95,11 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="/app/view/js/main.js"></script>
-    <script type="text/javascript" src="/app/view/js/session.js"></script>
-    <script type="text/javascript" src="/app/view/js/bootstrap-native-v4.js"></script>
-    <script type="text/javascript" src="/app/view/js/Alert.js"></script>
-    <script type="text/javascript" src="/app/view/js/Pagination.js"></script>
+    <script type="text/javascript" src="/promociones/view/js/main.js"></script>
+    <script type="text/javascript" src="/promociones/view/js/session.js"></script>
+    <script type="text/javascript" src="/promociones/view/js/bootstrap-native-v4.js"></script>
+    <script type="text/javascript" src="/promociones/view/js/Alert.js"></script>
+    <script type="text/javascript" src="/promociones/view/js/Pagination.js"></script>
     <?php
     $configurationTemplate = new ConfigurationTemplate();
     $configurationTemplate->addScripts();

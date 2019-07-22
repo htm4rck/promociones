@@ -10,9 +10,11 @@ class Routes
     $this->list_pages = array();
     
     //TODO : INICIO
-    $resource = new BeanResource('index', 'index/index.html');
+    $resource = new BeanResource('index', 'free/login/login.html');
+    $resource->viewFree();
     array_push($this->list_pages, $resource);
-    $resource = new BeanResource('', 'index/index.html');
+    $resource = new BeanResource('', 'free/login/login.html');
+    $resource->viewFree();
     array_push($this->list_pages, $resource);
 
     //TODO: API
@@ -82,7 +84,7 @@ class Routes
     $path_scripts = "";
     $view = true;
     if ($routes->isURLValidate()) {
-      $context = '/app/';
+      $context = '/promociones/';
       $context_path = $_SERVER['REQUEST_URI'];
       $path = substr($context_path, strlen($context));
       $values_path = explode("?", $path);
