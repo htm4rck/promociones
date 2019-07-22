@@ -10,7 +10,7 @@ class ClienteC
     {
         $this->data = file_get_contents('php://input');
         $this->data = json_decode($this->data);
-        $this->Cliente = Cliente::getCliente($this->data);
+        $this->cliente = Cliente::getCliente($this->data);
         $this->parameters = array();
         $this->action = $_GET['action'];
         $this->main();
@@ -40,6 +40,9 @@ class ClienteC
             $this->DelWork();
             break;
              */
+            case 'login':
+                $this->login();
+                break;
             default:
                 echo json_encode('{"Error": "Metodo no permitido"}');
                 break;
@@ -78,5 +81,9 @@ public function changePass()
 {
 echo json_encode(EmployeeM::changePassM($this->employee));
 }*/
+public function login()
+{
+    echo json_encode(ClienteM::loginM($this->cliente));   
+}
 }
 new ClienteC();

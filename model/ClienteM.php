@@ -397,6 +397,58 @@ $cn->closeCn();
         }
         return $capsule;
     }
+    
+    public static function loginM(Manager $t)
+    {
+        $capsule = new Capsule();
+        $count = 0;
+        $query  = 'SELECT COUNT(IDMANAGER) AS TOTAL FROM ';
+        $query .= ' HAPPYLAND.MANAGER ';
+        $query .= ' WHERE ';
+        $query .= " LOGIN = '" . $t->getLogin() . "'";
+        $query .= " AND PASS = '";
+        $query .= crypt($t->getPass(), '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$') . "'";
+        try {
+            $cn = new conexion;
+            $stmt = $cn->conectar()->prepare($query);
+            $stmt->execute();
+            $array = $stmt->fetchAll();
+            if ($array[0]['total'] == 0) {
+                $capsule->setMessage('Usuario o Clave Incorrecta');
+                $capsule->setCounter(0);
+                $capsule->setContent(new Manager());
+                $capsule->setError(true);
+            } else {
+                $count = $array[0]['total'];
+                $query  = 'SELECT * FROM ';
+                $query .= ' HAPPYLAND.MANAGER ';
+                $query .= ' WHERE ';
+                $query .= " LOGIN = '" . $t->getLogin() . "'";
+                $query .= " AND PASS = '";
+                $query .= crypt($t->getPass(), '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$') . "'";
+                $stmt = $cn->conectar()->prepare($query);
+                $stmt->execute();
+                $array = $stmt->fetchAll();
+                for ($i = 0; $i < count($array); $i++) {
+                    $t = new Manager($array[$i]['idmanager']);
+                    $t->setPaternal($array[$i]['paternal']);
+                    $t->setMaternal($array[$i]['maternal']);
+                    $t->setNames($array[$i]['names']);
+                    $t->setLogin($array[$i]['login']);
+                    $t->setPass('');
+                }
+                $capsule->setContent($t);
+                $capsule->setCounter($count);
+                $capsule->setMessage('ok');
+            }
+            return $capsule->getResponse();
+        } catch (Exception $e) {
+            return '{"error":' . $e . '}';
+        } finally {
+            $stmt = null;
+            $cn->closeCn();
+        }
+    }
 /*
 public static function getEmployee($id)
 {
