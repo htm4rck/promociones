@@ -402,12 +402,12 @@ $cn->closeCn();
     {
         $capsule = new Capsule();
         $count = 0;
-        $query  = 'SELECT COUNT(IDMANAGER) AS TOTAL FROM ';
+        $query  = 'SELECT COUNT(COD_CLIENTE) AS TOTAL FROM ';
         $query .= ' CLIENTE ';
         $query .= ' WHERE ';
         $query .= " LOGIN = '" . $t->getLogin() . "'";
         $query .= " AND PASS = '";
-        $query .= crypt($t->getPass(), '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$') . "'";
+        $query .= $t->getPass() . "'";
         try {
             $cn = new conexion;
             $stmt = $cn->conectar()->prepare($query);
@@ -425,7 +425,7 @@ $cn->closeCn();
                 $query .= ' WHERE ';
                 $query .= " LOGIN = '" . $t->getLogin() . "'";
                 $query .= " AND PASS = '";
-                $query .= crypt($t->getPass(), '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$') . "'";
+                $query .= $t->getPass(). "'";
                 $stmt = $cn->conectar()->prepare($query);
                 $stmt->execute();
                 $array = $stmt->fetchAll();
