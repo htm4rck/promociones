@@ -413,13 +413,13 @@ $cn->closeCn();
             $stmt = $cn->conectar()->prepare($query);
             $stmt->execute();
             $array = $stmt->fetchAll();
-            if ($array[0]['total'] == 0) {
+            if ($array[0]['Total'] == 0) {
                 $capsule->setMessage('Usuario o Clave Incorrecta');
                 $capsule->setCounter(0);
                 $capsule->setContent(new Cliente());
                 $capsule->setError(true);
             } else {
-                $count = $array[0]['total'];
+                $count = $array[0]['Total'];
                 $query  = 'SELECT * FROM ';
                 $query .= ' CLIENTE';
                 $query .= ' WHERE ';
