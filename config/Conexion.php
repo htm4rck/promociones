@@ -4,7 +4,7 @@ class Conexion
     private $host = "localhost";
     private $usuario = "root";
     private $pass = "rootroot";
-    private $bd = "bowling_granja";
+    private $bd = "granja_nueva";
     #private $host = "ec2-54-204-2-25.compute-1.amazonaws.com";
     #private $usuario = "dludvwpnxfoqud";
     #private $pass = "d66a8140338af78307279d60255e0138f5895f1d7f32893cd2aa2d3985ab8f95";
@@ -32,4 +32,4 @@ class Conexion
 /*
 $cn = new Conexion();
 var_dump($cn->Conectar());
-*/
+ */
