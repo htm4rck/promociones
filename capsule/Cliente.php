@@ -31,7 +31,7 @@ class Cliente implements JsonSerializable
         $cliente->setDistrito(@$std->distrito);
         $cliente->setDireccion(@$std->direccion);
         $cliente->setPromocion(@$std->promocion);
-        $cliente->setcliente(@$std->cliente);
+        $cliente->setUsuario(@$std->usuario);
         $cliente->setClave(@$std->clave);
         return $cliente;
     }
