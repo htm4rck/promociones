@@ -18,7 +18,7 @@ class Routes
     array_push($this->list_pages, $resource);
 
     //TODO: API
-    $resource = new BeanResource('api/registro', 'RegistroC.php');
+    $resource = new BeanResource('api/cliente', 'ClienteC.php');
     $resource->viewApi();
     array_push($this->list_pages, $resource);
     /*
