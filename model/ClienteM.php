@@ -369,12 +369,12 @@ $cn->closeCn();
             $array = $stmt->fetchAll();
             $lista = array();
             for ($i = 0; $i < count($array); $i++) {
-                $t = new Registro($array[$i]['cod_cliente']);
+                $t = new Cliente($array[$i]['cod_cliente']);
                 $t->setNombres($array[$i]['nombres']);
                 $t->setApellidos($array[$i]['apellidos']);
                 $t->setF_nacimiento($array[$i]['f_nacimiento']);
                 $t->setDni($array[$i]['dni']);
-                $t->setNumero($array[$i]['telefono']);
+                $t->setTelefono($array[$i]['telefono']);
                 $t->setCorreo($array[$i]['correo']);
                 $t->setDistrito($array[$i]['distrito']);
                 $t->setDireccion($array[$i]['direccion']);
